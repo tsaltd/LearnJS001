@@ -1,0 +1,47 @@
+﻿@using Middleware
+@model JsLabViewModel
+
+@{
+    ViewBag.Title = "Lesson";
+}
+
+<h1>Lesson</h1>
+
+@using (Html.BeginForm())
+{
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title">THIS IS THE TITLE OF THE PANEL</h1>
+        </div>
+        <div class="panel-body">
+    <div class="well well-lg">
+        <div class="container">
+            <div class="row">
+                <span class="input-group
+                                  col-sm-4
+                                  col-md-4
+                                  text-center"
+                              role="group">
+                            <span class="input-group-addon">
+                                <input name="cat" type="radio">&nbsp;Fin
+                            </span>
+                            <span class="input-group-addon">
+                                <input name="cat" type="radio">&nbsp;Count
+                            </span>
+                        </span>
+                <div class="col-sm-4 col-sm-offset-1
+                             col-md-4 col-md-offset-1
+                             form-group text-center">
+                    @Html.DropDownListFor(m => m.EmployeeClasses, EnumHelper.GetSelectList(typeof(JsLabViewModel.Employees)), "Select an Object to Analyze", new { @class = "form-control" })
+                </div>
+                <div class="col-sm-offset-1 col-sm-2
+                       col-md-offset-1 col-md-2
+                       form-group text-center">
+                    <input type="submit" id="btnAnalyze" class="btn-sm" value="Analyze">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+}
